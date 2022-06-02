@@ -1,5 +1,5 @@
 const galleri = document.querySelector("#gallery");
-
+const button = document.querySelector(".cameraBtn")
 function getImages(){
    const images = JSON.parse(localStorage.getItem("tagnaBilder"));
 //    console.log(images);
@@ -23,12 +23,17 @@ const imageElem = document.createElement("img");
 imageElem.setAttribute("src", image.image)
 imgDiv.appendChild(imageElem);
 removeButton.innerHTML = "x";
+removeButton.setAttribute("class", "removeButton");
+imgDiv.setAttribute("class","imgDiv")
 removeButton.addEventListener("click", () => {
     imgDiv.removeChild(removeButton,imageElem);
     imgDiv.parentNode.removeChild(imgDiv);
     deleteFunction(index);
 })
 imgDiv.appendChild(removeButton);
-gallery.appendChild(imgDiv);
+galleri.appendChild(imgDiv);
 }
 
+button.addEventListener("click", () =>{
+    window.location.replace("../kamera.html");
+})

@@ -3,7 +3,7 @@
 "short_name": "fotografen",
 "display": "standalone",
 "theme_color": "#000000",
-"start_url": "/",
+"start_url": "/landing.html",
 "icons":[
     {
       "src":"icons/icon-192.png",

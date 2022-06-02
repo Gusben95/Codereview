@@ -1,5 +1,5 @@
 // Hämta html-attributer. Samt deklarera variabler/konstanter.
-const galleri = document.querySelector("#gallery-button"); 
+const galleri = document.querySelector(".GalleryBtn"); 
 const kamera =  document.querySelector("#camera"); 
 const taBild =    document.querySelector("#take-picture");  
 const canvas =  document.querySelector("#picture"); 
@@ -8,6 +8,7 @@ const ctx = canvas.getContext("2d");
 let notificationPermission = "";
 let images; 
 let stream;
+let switchimage = true;
 // Kollar om det redan finns något i localstorage så vi inte skriver över de redan 
 //befinteliga bilderna. 
 if (localStorage.getItem("tagnaBilder") !== null){
@@ -30,6 +31,7 @@ startKamera();
 
 // rita en bild utifrån kamaran på click eventet.
 taBild.addEventListener("click", () =>{
+    if (switchimage){
      ctx.drawImage(kamera,0,0,canvas.width,canvas.height);
      //formatera till png
      const imageData = canvas.toDataURL("image/png")
@@ -41,7 +43,15 @@ taBild.addEventListener("click", () =>{
     //skicka upp tagna bilder till local storage.
     localStorage.setItem("tagnaBilder" , JSON.stringify(images))
     createNotification("Din bild har sparats.");
-
+    canvas.style.opacity = "1";
+    taBild.innerHTML = "FÅNGA ETT NYTT ÖGONBLICK"
+    switchimage = false; 
+}
+    else {
+        canvas.style.opacity = "0";
+        taBild.innerHTML= "FÖREVIGA ETT ÖGONBLICK"
+        switchimage = true;
+    }
 });
 //Lägg till ett event på galleriknappen för att ta en till /galleri.html
 galleri.addEventListener("click", () =>{
@@ -65,3 +75,4 @@ function createNotification(text){
         })
     }
 }
+

@@ -4,10 +4,15 @@ body
 
 #container{
     height: 80vh;
-    width: 100vw;
+    width: 100%;
     text-align: center;
-    margin-top: 15%;
+    
 }
 #landing-text{
-    margin-top: 3%;
+    padding-top: 3%;
+    width: 100%;
+}
+
+#logo{
+    margin-top: 20%;
 }

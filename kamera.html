@@ -6,22 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/stylesheets/kamera.css">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="galleri-div">
-        <button id="gallery-button"><img src="icons/galleryIcon.png"></img></button>
-    </div>
-    <div id="videoDiv">
+    
+    <div id="container">
+        <div id="header">
+           <section class="GalleryBtn">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </section>
+          </button>
+         </div>
+    <div id="videoDiv">   
     <video src="" id="camera" autoplay></video>
-    <br>
-    <button id="take-picture">Ta ett foto</button>
-    </div>
-<div id="picture-div">
+
     <canvas id="picture"></canvas>
-    <button id="newPic">Ta ett nytt foto</button>
-</div>
+    </div>
+    <button id="take-picture">FÖREVIGA ETT ÖGONBLICK</button>
+    </div>
+    
+    
+  
     <script src="/js/kamera.js"></script>
 </body>
 

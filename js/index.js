@@ -10,6 +10,6 @@ async function registerServiceWorker () {
 registerServiceWorker();
 
 index.addEventListener("click", () =>{
-    window.location.replace("index.html")
+    window.location.replace("kamera.html")
     // window.location.replace("../in");
 })

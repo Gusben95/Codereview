@@ -1,0 +1,13 @@
+body
+{background: #2A2E30;}
+
+
+#container{
+    height: 80vh;
+    width: 100vw;
+    text-align: center;
+    margin-top: 15%;
+}
+#landing-text{
+    margin-top: 3%;
+}

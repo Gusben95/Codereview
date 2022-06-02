@@ -1,3 +1,4 @@
+const index = document.querySelector("#container")
 async function registerServiceWorker () {
     if ("serviceWorker" in navigator) {
         try {
@@ -7,3 +8,8 @@ async function registerServiceWorker () {
     }
 }
 registerServiceWorker();
+
+index.addEventListener("click", () =>{
+    window.location.replace("index.html")
+    // window.location.replace("../in");
+})
